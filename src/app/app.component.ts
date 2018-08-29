@@ -2,7 +2,7 @@ import { ClockService } from "./clock.service";
 import { FeedingService } from "./shared/feeding.service";
 import { Component } from "@angular/core";
 import * as moment from "moment";
-import $ from "jquery";
+import * as $ from "jquery";
 
 @Component({
   selector: "app-root",
