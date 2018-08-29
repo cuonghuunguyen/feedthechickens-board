@@ -15,6 +15,7 @@ export class FeedingService {
   constructor(public afs: AngularFirestore, private clock: ClockService) {
     this.feedingList = [];
     this.getNotFedData();
+    this.getFedData();
   }
   getNotFedData() {
     let tempList: Feeding[];

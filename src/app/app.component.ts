@@ -21,10 +21,11 @@ export class AppComponent {
     const notFedList = this.feedingService.feedingList.filter(feeding => {
       return new Date(feeding.time).getTime() < new Date().getTime();
     });
-    console.log(notFedList);
 
     notFedList.map(feeding => {
-      console.log(`feed in ${feeding.duration} seconds`);
+      $.get(`http://localhost/project.php?seconds=${feeding.duration}`, () => {
+        console.log(`fed in ${feeding.duration} seconds`);
+      });
       const temp = Object.assign({}, feeding);
       if (feeding.loop) {
         temp.fed = false;
