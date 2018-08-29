@@ -1,7 +1,8 @@
 import { ClockService } from "./clock.service";
 import { FeedingService } from "./shared/feeding.service";
 import { Component } from "@angular/core";
-const moment = require("moment");
+import * as moment from "moment";
+import $ from "jquery";
 
 @Component({
   selector: "app-root",
@@ -35,7 +36,6 @@ export class AppComponent {
         feeding.time = this.clockService.getHtmlDateString(
           moment()
             .add(1, "days")
-            .calendar()
             .toDate()
         );
         this.feedingService.updateData(feeding);
